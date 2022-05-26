@@ -1,13 +1,12 @@
 import check50
-import check50.c
+import re
 
-filename = "hellolang.py"
 @check50.check()
 def exists():
-    """%s exists.""" % filename
-    check50.exists(filename)
+    """hellolang.py exists"""
+    check50.exists("hellolang.py")
 
 @check50.check(exists)
 def compiles():
-    """%s compiles.""" % filename
-    check50.c.compile(filename, lcs50=True)
+    """hellolang.py compiles"""
+    check50.c.compile("hellolang.py", lcs50=True)

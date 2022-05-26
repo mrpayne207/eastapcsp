@@ -1,12 +1,9 @@
-lab50:
-  files:
+submit50:
+  files: &submit50_files
     - !exclude "*"
-    - !include hellolang.py
+    - !include "*.py"
+    - !require hellolang.py
+  style: false
 
 check50:
-  files: &check50_files
-    - !exclude "*"
-    - !include "hellolang.py"
-
-submit50:
-  files: *check50_files
+  files: *submit50_files

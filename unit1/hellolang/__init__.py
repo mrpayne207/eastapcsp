@@ -9,4 +9,4 @@ def exists():
 @check50.check(exists)
 def compiles():
     """hellolang.py compiles"""
-    check50.c.compile("hellolang.py", lcs50=True)
+    check50.run("python3 hellolang.py").exit(0)

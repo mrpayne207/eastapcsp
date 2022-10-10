@@ -10,7 +10,7 @@ def exists():
 
 @check50.check(exists)
 def test_alunch():
-    """input of 11:44 yields output of \"A Lunch\""""
+    """input of 11:26 yields output of \"A Lunch\""""
     input = "11:26"
     output = "A Lunch"
     check50.run("python3 lunch.py").stdin(input, prompt=True).stdout(regex(output), output, regex=True).exit()
@@ -54,14 +54,20 @@ def test_clunch2():
     output = "C Lunch"
     check50.run("python3 lunch.py").stdin(input, prompt=True).stdout(regex(output), output, regex=True).exit()
 
-
 @check50.check(exists)
-def test_no_output():
+def test_nolunch():
     """input of 11:00 yields output of \"No lunch at this time\""""
     input = "11:00"
     output = "No lunch at this time"
-    check50.run("python3 meal.py").stdin(input, prompt=True).stdout(regex(output), output, regex=True).exit()
+    check50.run("python3 lunch.py").stdin(input, prompt=True).stdout(regex(output), output, regex=True).exit()
+    
 
+@check50.check(exists)
+def test_nolunch2():
+    """input of 13:27 yields output of \"No lunch at this time\""""
+    input = "13:27"
+    output = "No lunch at this time"
+    check50.run("python3 lunch.py").stdin(input, prompt=True).stdout(regex(output), output, regex=True).exit()
 
 def regex(time):
     """match case-insensitively with only whitespace on either side"""

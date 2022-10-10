@@ -2,7 +2,7 @@ submit50:
   files: &submit50_files
     - !exclude "*"
     - !include "*.py"
-    - !require hellolang.py
+    - !require hello.py
   style: false
 
 check50:

@@ -11,6 +11,7 @@ def exists():
 @check50.check(exists)
 def test_p2win():
     """input of \"R\", \"P\", results in PLAYER 2 WINS"""
-    items = ["R", "P"]
+    input1 = "r"
+    input2 = "p"
     output = "PLAYER 2 WINS"
-    check50.run("python3 rps1.py").stdin(items[0], prompt=True).stdin(items[1], prompt=True).stdout(regex(output), output, regex=True).exit()
+    check50.run("python3 rps1.py").stdin(input1, prompt=True).stdin(input2, prompt=True).stdout(regex(output), output, regex=True).exit()

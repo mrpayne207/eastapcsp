@@ -1,6 +1,5 @@
 import check50
-from re import escape
-from re import regex
+import re
 
 
 @check50.check()

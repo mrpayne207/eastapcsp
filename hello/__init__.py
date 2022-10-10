@@ -1,20 +1,17 @@
-import re
+import check50
 
-from check50 import *
 
-class Hello(Checks):
+@check50.check()
+def exists():
+    """hello.py exists"""
+    check50.exists("hello.py")
 
-    @check()
-    def exists(self):
-        """hello.py exists."""
-        self.require("hello.py")
+@check50.check(exists)
+def veronica():
+    """responds to name Veronica."""
+    check50.run("python3 hello.py").stdin("Veronica", prompt=False).stdout("hello, Veronica").exit()
 
-    @check("exists")
-    def david(self):
-        """responds to name Veronica."""
-        self.spawn("python hello.py").stdin("Veronica").stdout("hello, Veronica\n")
-
-    @check("exists")
-    def brian(self):
-        """responds to name Brian."""
-        self.spawn("python hello.py").stdin("Brian").stdout("hello, Brian\n")
+@check50.check(exists)
+def david():
+    """responds to name David"""
+    check50.run("python3 hello.py").stdin("David", prompt=False).stdout("hello, David").exit()

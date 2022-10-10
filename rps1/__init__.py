@@ -1,5 +1,4 @@
 import check50
-from pexpect import EOF
 from re import escape
 
 
@@ -8,10 +7,22 @@ def exists():
     """rps1.py exists"""
     check50.exists("rps1.py")
 
+
 @check50.check(exists)
-def test_p2win():
-    """input of \"R\", \"P\", results in PLAYER 2 WINS"""
-    input1 = "r"
-    input2 = "p"
+def test_p2wins():
+    """input of \"R\" and \"P\" results in \"PLAYER 2 WINS\""""
+    input = ["R", "P"]
     output = "PLAYER 2 WINS"
-    check50.run("python3 rps1.py").stdin(input1, prompt=True).stdin(input2, prompt=True).stdout(regex(output), output, regex=True).exit()
+    check50.run("python3 rps1.py").stdin(input[0], prompt=True).stdin(input[1], prompt=True).stdout(regex(output), output, regex=True).exit()
+
+
+@check50.check(exists)
+def test_p1wins():
+    """input of \"s\" and \"p\" results in \"PLAYER 1 WINS\""""
+    input = ["s", "p"]
+    output = "PLAYER 1 WINS"
+    check50.run("python3 rps1.py").stdin(input[0], prompt=True).stdin(input[1], prompt=True).stdout(regex(output), output, regex=True).exit()
+
+def regex(play):
+    """match case-insensitively with only whitespace on either side"""
+    return fr'(?i)^\s*{escape(play)}\s*$'

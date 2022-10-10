@@ -2,7 +2,7 @@ import re
 
 from check50 import *
 
-class Hello(Checks):
+class Hellolang(Checks):
     
     @check()
     def exists(self):

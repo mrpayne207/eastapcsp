@@ -1,9 +1,8 @@
-submit50: 
+submit50:
   files: &submit50_files
     - !exclude "*"
     - !include "*.py"
     - !require hello.py
-  style: flase
 
 check50:
   files: *submit50_files

@@ -32,4 +32,4 @@ def test_p1isscissor():
 @check50.check(exists)
 def test_invalid():
     """input of \"f\" for Player 1 results in \"Make sure to enter r for rock, p for paper or s for scissors\""""
-    check50.run("python3 rps1.py").stdin("f", prompt=True).stdout("Computer: [rps]\nMake sure to enter r for rock, p for paper or s for scissors", prompt=True).exit()
+    check50.run("python3 rps1.py").stdin("f", prompt=True).stdout("Computer: [rps]\nMake sure to enter r for rock, p for paper or s for scissors").exit()

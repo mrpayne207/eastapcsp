@@ -12,5 +12,5 @@ def exists():
 def test_p1isR():
     """input of \"R\" for Player 1 matches \"TIE\" for \"Computer = r\", \"COMPUTER WINS\" for \"Computer = p\" or \"PLAYER 1 WINS\" for \"Computer = s\""""
     output = check50.run("python3 rps2.py").stdin("R", prompt = True).stdout()
-    if not any(answer in output for answer in ["Computer = r, TIE", "Computer = p, COMPUTER WINS", "Computer = s, PLAYER 1 WINS"]):
+    if not any(answer in output for answer in ["Computer: r, TIE", "Computer: p, COMPUTER WINS", "Computer: s, PLAYER 1 WINS"]):
       raise check50.Failure("no match found")

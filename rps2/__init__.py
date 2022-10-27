@@ -33,5 +33,5 @@ def test_p1isscissor():
 def test_invalid():
     """input of \"f\" for Player 1 results in \"Make sure to enter r for rock, p for paper or s for scissors\""""
     output = check50.run("python3 rps2.py").stdin("f", prompt = True).stdout()
-    if not any(answer in output for answer in ["Computer: s\nMake sure to enter r for rock, p for paper or s for scissors", "Computer: r\nMake sure to enter r for rock, p for paper or s for scissors", "Computer: p\nMake sure to enter r for rock, p for paper or s for scissors"]):
+    if not any(answer in output for answer in ["Make sure to enter r for rock, p for paper or s for scissors"]):
       raise check50.Failure("no match found") 

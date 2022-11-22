@@ -9,4 +9,11 @@ def exists():
 @check50.check(exists)
 def test():
     """input of x = 4.32 and y = 8.67 yields correct results"""
-    check50.run("python3 calc.py").stdin("4.32", prompt=True).stdin("8.67", prompt=True).stdout('x + y = 12.99\n').exit()
+    input1 = "4.32"
+    input2 = "8.67"
+    output = "x + y = 12.99"
+    check50.run("python3 calc.py").stdin(input1, prompt=True).stdin(input2, prompt=True).stdout(regex(output), output, regex=True).exit()
+    
+def regex(text):
+    """match case-sensitively, allowing for characters on either side"""
+    return fr'^.*{escape(text)}.*$'

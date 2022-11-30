@@ -17,7 +17,8 @@ def test_decimal_level():
     """dice.py rejects decimal dice"""
     check50.run("python3 dice.py").stdin("0.1", prompt=True).reject()
     
-    @check50.check(exists)
+
+@check50.check(exists)
 def test_integer_level():
     """dice.py rejects out-of-range dice"""
     check50.run("python3 dice.py").stdin("0", prompt=True).reject()

@@ -13,7 +13,7 @@ def test_string_level():
     check50.run("python3 dice.py").stdin("cat", prompt=True).reject()
 
 @check50.check(exists)
-def test_integer_level():
+def test_decimal_level():
     """dice.py rejects decimal dice"""
     check50.run("python3 dice.py").stdin("0.1", prompt=True).reject()
     

@@ -8,9 +8,14 @@ def exists():
     check50.exists("word_checker.py")
 
 @check50.check(exists)
-def test():
+def testNumber():
     """word_checker.py rejects numeric word input"""
     check50.run("python3 word_checker.py").stdin("1", prompt=True).reject()
+
+@check50.check(exists)
+def testSymbol():
+    """word_checker.py rejects non-letter input"""
+    check50.run("python3 word_checker.py").stdin("hello!", prompt=True).reject()
     
 def regex(text):
     """match case-sensitively, allowing for characters on either side"""

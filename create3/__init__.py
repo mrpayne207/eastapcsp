@@ -30,4 +30,4 @@ def condition():
 def loop():
     """implemented at least 1 loop"""
     check50.include("custom_checks.py")
-    check50.run("python3 custom_checks.py loop").exit(1)
+    check50.run("python3 custom_checks.py loop").exit(0)

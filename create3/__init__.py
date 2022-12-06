@@ -19,3 +19,15 @@ def custom_function():
     """implemented at least 1 top-level function other than main with condition and loop"""
     check50.include("custom_checks.py")
     check50.run("python3 custom_checks.py custom_functions").exit(0)
+
+@check50.check(exists)
+def custom_function():
+    """implemented at least 1 condition"""
+    check50.include("custom_checks.py")
+    check50.run("python3 custom_checks.py condition").exit(0)
+
+@check50.check(exists)
+def custom_function():
+    """implemented at least 1 loop"""
+    check50.include("custom_checks.py")
+    check50.run("python3 custom_checks.py loop").exit(0)

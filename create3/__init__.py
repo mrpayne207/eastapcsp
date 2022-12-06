@@ -14,19 +14,8 @@ def main_function():
     check50.run("python3 custom_checks.py main_function").exit(0)
 
 
-@check50.check(exists_project)
-def custom_functions():
-    """implemented at least 3 top-level functions other than main"""
+@check50.check(exists)
+def custom_function():
+    """implemented at least 1 top-level function other than main with condition and loop"""
     check50.include("custom_checks.py")
     check50.run("python3 custom_checks.py custom_functions").exit(0)
-
-
-@check50.check(custom_functions)
-def unit_test():
-    """each function other than main accompanied with a unit test"""
-    check50.include("custom_checks.py")
-    code = check50.run("python3 custom_checks.py unit_test").exit()
-    if (code == 2):
-        raise check50.Failure("test_project.py not found")
-    elif (code != 0):
-        raise check50.Failure("failed to run unit tests")

@@ -34,7 +34,7 @@ match sys.argv[1]:
     
     case "loop":
         with open("create3.py") as file:
-            condition_counter = 0
+            loop_counter = 0
             for line in file.readlines():
                 if ("for" or "while") in line.strip():
                     loop_counter += 1

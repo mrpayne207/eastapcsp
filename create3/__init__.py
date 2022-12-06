@@ -7,17 +7,7 @@ def exists():
     """create3.py exists"""
     check50.exists("create3.py")
 
-import re
-import check50
-
-
-@check50.check(final_readme)
-def exists_create3():
-    """create3.py exists"""
-    check50.exists("create3.py")
-
-
-@check50.check(exists_project)
+@check50.check(exists)
 def main_function():
     """main function exists"""
     check50.include("custom_checks.py")

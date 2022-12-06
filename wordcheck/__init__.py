@@ -41,6 +41,18 @@ def testSymbolGuess():
 def testDoubleGuess():
     """word_checker.py rejects non-single letter guess input"""
     check50.run("python3 word_checker.py").stdin("hello", prompt=True).stdin("greeting", prompt=True).stdin("ab", prompt=True).reject()
+
+@check50.check(exists)
+def test_hello():
+    """input of \'hello\' and \'H\', \'E\', \'L\', \'O\' yields correct results"""
+    input1 = "hello"
+    input2 = "greeting"
+    input3 = "H"
+    input4 = "E"
+    input5 = "L"
+    input6 = "O"
+    output = "EXCELLENT, the word was HELLO\nYOU WIN!!!"
+    check50.run("python3 word_checker.py").stdin(input1, prompt=True).stdin(input2, prompt=True).stdin(input3, prompt=True).stdin(input4, prompt=True).stdin(input5, prompt=True).stdin(input6, prompt=True).stdout(regex(output), output, regex=True).exit()
     
 def regex(text):
     """match case-sensitively, allowing for characters on either side"""

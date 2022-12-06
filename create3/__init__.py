@@ -21,13 +21,13 @@ def custom_function():
     check50.run("python3 custom_checks.py custom_functions").exit(0)
 
 @check50.check(exists)
-def custom_function():
+def condition():
     """implemented at least 1 condition"""
     check50.include("custom_checks.py")
     check50.run("python3 custom_checks.py condition").exit(1)
 
 @check50.check(exists)
-def custom_function():
+def loop():
     """implemented at least 1 loop"""
     check50.include("custom_checks.py")
     check50.run("python3 custom_checks.py loop").exit(1)

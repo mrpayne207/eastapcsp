@@ -66,7 +66,7 @@ def test_helloFail():
     input7 = "F"
     input8 = "G"
     input9 = "I"
-    output = "Correct guesses: ['_', '_', '_', '_', '_']\nWorng Guesses: ['A', 'B', 'C', 'D', 'F', 'G', 'I']\nYou have 0 remaining guesses\nYOU LOSE!!!"
+    output = "Correct guesses: ['_', '_', '_', '_', '_']\nWrong Guesses: ['A', 'B', 'C', 'D', 'F', 'G', 'I']\nYou have 0 remaining guesses\nYOU LOSE!!!"
     check50.run("python3 word_checker.py").stdin(input1, prompt=True).stdin(input2, prompt=True).stdin(input3, prompt=True).stdin(input4, prompt=True).stdin(input5, prompt=True).stdin(input6, prompt=True).stdin(input7, prompt=True).stdin(input8, prompt=True).stdin(input9, prompt=True).stdout(regex(output), output, regex=True).exit()
     
 def regex(text):

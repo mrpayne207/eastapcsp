@@ -33,3 +33,32 @@ match sys.argv[1]:
             
             # Ensure there are at least 1 top-level functions other than main
             assert loop_counter >= 1
+    
+    case "condition":
+        with open("create3.py") as file:
+            condition_counter = 0
+            for line in file.readlines():
+                if "def main" in line.strip():
+                    continue
+                elif "def" in line.strip():
+                    continue
+                if ("if" or "elif" or "else") in line.strip():
+                    condition_counter += 1
+            
+            # Ensure there are at least 1 top-level functions other than main
+            assert condition_counter >= 1
+            
+    
+    case "loop":
+        with open("create3.py") as file:
+            condition_counter = 0
+            for line in file.readlines():
+                if "def main" in line.strip():
+                    continue
+                elif "def" in line.strip():
+                    continue
+                if ("for" or "while") in line.strip():
+                    loop_counter += 1
+           
+            # Ensure there is at least 1 loop in the program
+            assert loop_counter >= 1

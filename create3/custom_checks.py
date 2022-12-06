@@ -12,8 +12,6 @@ match sys.argv[1]:
     case "custom_functions":
         with open("create3.py") as file:
             function_counter = 0
-            condition_counter = 0
-            loop_counter = 0
             for line in file.readlines():
                 if "def main" in line.strip():
                     continue
@@ -27,12 +25,6 @@ match sys.argv[1]:
             
             # Ensure there are at least 1 top-level functions other than main
             assert function_counter >= 1
-            
-            # Ensure there are at least 1 top-level functions other than main
-            assert condition_counter >= 1
-            
-            # Ensure there are at least 1 top-level functions other than main
-            assert loop_counter >= 1
     
     case "condition":
         with open("create3.py") as file:

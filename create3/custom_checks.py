@@ -17,11 +17,6 @@ match sys.argv[1]:
                     continue
                 elif "def" in line.strip():
                     function_counter += 1
-                if ("if" or "elif" or "else") in line.strip():
-                    condition_counter += 1
-                if ("for" or "while") in line.strip():
-                    loop_counter += 1
-                  
             
             # Ensure there are at least 1 top-level functions other than main
             assert function_counter >= 1

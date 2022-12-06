@@ -43,7 +43,7 @@ def testDoubleGuess():
     check50.run("python3 word_checker.py").stdin("hello", prompt=True).stdin("greeting", prompt=True).stdin("ab", prompt=True).reject()
 
 @check50.check(exists)
-def test_hello():
+def test_helloPass():
     """input of \'hello\' and \'H\', \'E\', \'L\', \'O\' yields correct results"""
     input1 = "hello"
     input2 = "greeting"
@@ -53,6 +53,20 @@ def test_hello():
     input6 = "O"
     output = "EXCELLENT, the word was HELLO\nYOU WIN!!!"
     check50.run("python3 word_checker.py").stdin(input1, prompt=True).stdin(input2, prompt=True).stdin(input3, prompt=True).stdin(input4, prompt=True).stdin(input5, prompt=True).stdin(input6, prompt=True).stdout(regex(output), output, regex=True).exit()
+
+@check50.check(exists)
+def test_helloFail():
+    """input of \'hello\' and \'A\', \'B\', \'C\', \'D\', \'F\', \'G\' yields correct results"""
+    input1 = "hello"
+    input2 = "greeting"
+    input3 = "A"
+    input4 = "B"
+    input5 = "C"
+    input6 = "D"
+    input7 = "F"
+    input8 = "I"
+    output = "Correct guesses: ['_', '_', '_', '_', '_']\nWorng Guesses: ['A', 'B', 'C', 'D', 'F', 'G']\nYou have 0 remaining guesses\nYOU LOSE!!!"
+    check50.run("python3 word_checker.py").stdin(input1, prompt=True).stdin(input2, prompt=True).stdin(input3, prompt=True).stdin(input4, prompt=True).stdin(input5, prompt=True).stdin(input6, prompt=True).stdin(input7, prompt=True).stdin(input8, prompt=True).stdout(regex(output), output, regex=True).exit()
     
 def regex(text):
     """match case-sensitively, allowing for characters on either side"""

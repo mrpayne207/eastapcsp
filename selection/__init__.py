@@ -24,7 +24,7 @@ def testFloat():
 
 @check50.check(exists)
 def test_list():
-    """input of [1, 3, 8, 0, -5, -1] sorts correction"""
+    """input of [1, 3, 8, 0, -5, -1] sorts correctly"""
     input1 = "6"
     input2 = "1"
     input3 = "3"

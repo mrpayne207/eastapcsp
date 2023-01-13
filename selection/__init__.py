@@ -23,7 +23,7 @@ def testFloat():
     check50.run("python3 selection_sort.py").stdin("0.1", prompt=True).reject()
 
 @check50.check(exists)
-def test_helloPass():
+def test_list():
     """input of [1, 3, 8, 0, -5, -1] sorts correction"""
     input1 = 6
     input2 = 1

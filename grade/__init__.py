@@ -21,6 +21,14 @@ def testSymbol():
 def testFloat():
     """grade.py rejects float input for number of grades"""
     check50.run("python3 grade.py").stdin("0.1", prompt=True).reject()
+    
+@check50.check(exists)
+def testGrade():
+    """grade.py rejects grade out of bounds between 0 and 100"""
+    input1 = "1"
+    input2 = "-1"
+    input3 = "101"
+    check50.run("python3 grade.py").stdin(input1, prompt=True).stdin(input2, prompt=True).reject()
 
 @check50.check(exists)
 def testA():

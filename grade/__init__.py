@@ -46,7 +46,7 @@ def testB():
 def testC():
     """grades of [70, 75] result in 72.5 and an C"""
     input1 = "2"
-    input2 = "70
+    input2 = "70"
     input3 = "75"
     output = "Average = 72.5, Letter Grade = C"
     check50.run("python3 grade.py").stdin(input1, prompt=True).stdin(input2, prompt=True).stdin(input3, prompt=True).stdout(regex(output), output, regex=True).exit()

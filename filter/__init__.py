@@ -66,7 +66,7 @@ def test_blur():
 
 def test_shirt(photo):
     check50.include(photo)
-    check50.run(f"python3 filter.py MEHS.jpg {photo}").exit(0)
-    hash = check50.hash(f"{photo[:-4]}.png")
+    check50.run(f"python3 filter.py MEHS.jpg {photo[:-4]}").exit(0)
+    hash = check50.hash(f"{photo[:-4]}_correct.png)
     if hash != HASHES[photo]:
         raise check50.Failure("Image does not match")

@@ -35,7 +35,7 @@ def test_more_arguments():
     """filter.py exits given more than two command-line arguments"""
     for file in ["MEHS.jpg", "MEHS1.jpg", "MEHS2.jpg"]:
         check50.include(file)
-    exit = check50.run("python3 filter.py MEHS.jpg MEHS1.jpg MEHS2.jpg").exit()
+    exit = check50.run("python3 filter.py MEHS.jpg crop blur").exit()
     if exit == 0:
         raise check50.Failure(f"Expected non-zero exit code.")
 

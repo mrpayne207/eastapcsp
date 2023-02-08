@@ -43,30 +43,30 @@ def test_more_arguments():
 @check50.check(exists)
 def test_black_white():
     """filter.py correctly filters black and white on MEHS.jpg"""
-    test_shirt("black_white.png")
+    test_shirt("black_white")
 
 
 @check50.check(exists)
 def test_crop():
     """filter.py correctly filters crop on MEHS.jpg"""
-    test_shirt("crop.png")
+    test_shirt("crop")
 
 
 @check50.check(exists)
 def test_reflect():
     """filter.py correctly filters reflect on MEHS.jpg"""
-    test_shirt("reflect.png")
+    test_shirt("reflect")
 
 
 @check50.check(exists)
 def test_blur():
     """filter.py correctly filters blur on MEHS.jpg"""
-    test_shirt("blur.jpg")
+    test_shirt("blur")
 
 
 def test_shirt(photo):
     check50.include(photo)
-    check50.run(f"python3 filter.py MEHS.jpg {photo[:-4]}.png").exit(0)
+    check50.run(f"python3 filter.py MEHS.jpg {photo}").exit(0)
     hash = check50.hash(f"{photo[:-4]}.png")
     if hash != HASHES[photo]:
         raise check50.Failure("Image does not match")

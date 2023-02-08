@@ -1,11 +1,11 @@
 import check50
 
 HASHES = {
-    "MEHS.jpg" : '963f6887460addafb99d302578f3c10ef688e924b6c8e9abebdda9a9c0df45fe'
-    "black_white.png" : '56751daacaa452a8f11a35f5238aa6d896d9c37e993a32e10294add9b2a95abf'
-    "crop.png" : '74061251f0ca818c9aa7f8b86e7bbb1efaa4031eb6422b4f755fc67285f6f1fd'
-    "reflect.png" : 'ff0a8cb53a28ac9eab1ad02e92530af1999d8a14da62ad12770522b64962bbd1'
-    "blur.png" : '7831d7d8a3730adb34222c65d9379db362729e5868d703fc2fd61e41f6a806bc'
+    "MEHS.jpg" : '963f6887460addafb99d302578f3c10ef688e924b6c8e9abebdda9a9c0df45fe',
+    "black_white.png" : '56751daacaa452a8f11a35f5238aa6d896d9c37e993a32e10294add9b2a95abf',
+    "crop.png" : '74061251f0ca818c9aa7f8b86e7bbb1efaa4031eb6422b4f755fc67285f6f1fd',
+    "reflect.png" : 'ff0a8cb53a28ac9eab1ad02e92530af1999d8a14da62ad12770522b64962bbd1',
+    "blur.png" : '7831d7d8a3730adb34222c65d9379db362729e5868d703fc2fd61e41f6a806bc',
 }
 
 

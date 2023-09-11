@@ -10,7 +10,7 @@ def exists():
 @check50.check(exists)
 def test():
     """running python hello_world.py produces correct output"""
-    output = "hello, world!"
+    output = "Hello, World!"
     check50.run("python3 hello_world.py").stdout(regex(output), output, regex=True).exit()
     
 def regex(text):

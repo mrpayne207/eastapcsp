@@ -2,7 +2,7 @@ submit50:
   files: &submit50_files
     - !exclude "*"
     - !include "*.py"
-    - !require makingfaces.py
+    - !require making_faces.py
   style: false
   
 check50:

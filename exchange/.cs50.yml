@@ -1,1 +1,9 @@
+submit50:
+  files: &submit50_files
+    - !exclude "*"
+    - !include "*.py"
+    - !require exchange.py
+  style: false
 
+check50:
+  files: *submit50_files

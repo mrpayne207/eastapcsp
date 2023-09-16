@@ -9,7 +9,7 @@ match sys.argv[1]:
             # Look for main function definition and avoid importing any libraries
             assert "def main" in "".join(file.read().splitlines())
 
-    case "custom_functions_defined":
+    case "custom_functions":
         with open("convert.py") as file:
             function_counter = 0
             for line in file.readlines():

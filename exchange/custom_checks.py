@@ -10,7 +10,7 @@ match sys.argv[1]:
             assert "def main" in "".join(file.read().splitlines())
 
     case "custom_functions":
-        with open("convert.py") as file:
+        with open("exchange.py") as file:
             function_counter = 0
             for line in file.readlines():
                 if "def main" in line.strip():

@@ -4,7 +4,7 @@ from inspect import getmembers, isfunction
 match sys.argv[1]:
 
     case "main_function":
-        with open("exchage.py") as file:
+        with open("exchange.py") as file:
 
             # Look for main function definition and avoid importing any libraries
             assert "def main" in "".join(file.read().splitlines())

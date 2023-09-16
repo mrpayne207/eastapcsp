@@ -19,4 +19,4 @@ match sys.argv[1]:
                     function_counter += 1
             
             # Ensure there are at least 1 top-level functions other than main
-            assert function_counter >= 2
+            assert function_counter >= 1

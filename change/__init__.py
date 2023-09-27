@@ -11,14 +11,14 @@ def exists():
 def test41():
     """input of .41 has correct results"""
     input1 = ".41"
-    output = "1 [Qq]uarter(s)\n1 [Dd]ime(s)\n1 [Nn]ickle(s)\n1 [Pp]ennie(s)"
+    output = "1 Qquarter(s)\n1 dime(s)\n1 nickle(s)\n1 pennie(s)"
     check50.run("python3 change.py").stdin(input1, prompt=True).stdout(regex(output), output, regex=True).exit()
 
 @check50.check(exists)
 def test93():
     """input of .93 has correct results"""
     input1 = ".93"
-    output = "3 [Qq]uarter(s)\n1 [Dd]ime(s)\n1 [Nn]ickle(s)\n3 [Pp]ennie(s)"
+    output = "3 quarter(s)\n1 dime(s)\n1 nickle(s)\n3 pennie(s)"
     check50.run("python3 change.py").stdin(input1, prompt=True).stdout(regex(output), output, regex=True).exit()
 
 @check50.check(exists)

@@ -11,7 +11,7 @@ def exists():
 def test41():
     """input of .41 has correct results"""
     input1 = ".41"
-    output = "1 Qquarter(s)\n1 dime(s)\n1 nickle(s)\n1 pennie(s)"
+    output = "1 quarter(s)\n1 dime(s)\n1 nickle(s)\n1 pennie(s)"
     check50.run("python3 change.py").stdin(input1, prompt=True).stdout(regex(output), output, regex=True).exit()
 
 @check50.check(exists)

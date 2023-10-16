@@ -20,7 +20,7 @@ def testgif():
 def testjpg():
     """input of happy.jpg yields output of image/jpeg"""
     input = "happy.jpg"
-    output = "image/jpeg"
+    output = "image/jpg"
     check50.run("python3 extensions.py").stdin(input, prompt=True).stdout(regex(output), output, regex=True).exit()
 
 

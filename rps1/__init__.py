@@ -25,7 +25,7 @@ def test_p1wins():
 
 @check50.check(exists)
 def test_tie():
-    """input of \"p\" and \"p\" results in \"PLAYER 1 WINS\""""
+    """input of \"p\" and \"p\" results in \"TIE\""""
     input = ["p", "p"]
     output = "TIE"
     check50.run("python3 rps1.py").stdin(input[0], prompt=True).stdin(input[1], prompt=True).stdout(regex(output), output, regex=True).exit()

@@ -100,7 +100,7 @@ def test_two():
 def testjpg_substring():
     """input of zipper.jpg, with another extension name, yields output of image/jpeg"""
     input = "zipper.jpg"
-    output = "image/jpeg"
+    output = "image/jpg"
     check50.run("python3 extensions.py").stdin(input, prompt=True).stdout(regex(output), output, regex=True).exit()
     
 

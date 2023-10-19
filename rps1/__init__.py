@@ -45,7 +45,7 @@ def main_function():
 
 @check50.check(exists)
 def custom_function():
-    """implemented at least 1 top-level function other than main"""
+    """implemented at least 2 top-level function other than main"""
     check50.include("custom_checks.py")
     check50.run("python3 custom_checks.py custom_functions").exit(0)
 

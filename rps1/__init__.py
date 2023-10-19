@@ -36,7 +36,19 @@ def test_invalid():
     input = ["f", "b"]
     output = "Make sure to enter r for rock, p for paper or s for scissors"
     check50.run("python3 rps1.py").stdin(input[0], prompt=True).stdin(input[1], prompt=True).stdout(regex(output), output, regex=True).exit()
-    
+
+@check50.check(exists)
+def main_function():
+    """main function exists"""
+    check50.include("custom_checks.py")
+    check50.run("python3 custom_checks.py main_function").exit(0)
+
+@check50.check(exists)
+def custom_function():
+    """implemented at least 1 top-level function other than main"""
+    check50.include("custom_checks.py")
+    check50.run("python3 custom_checks.py custom_functions").exit(0)
+
 def regex(play):
     """match case-insensitively with only whitespace on either side"""
     return fr'(?i)^\s*{escape(play)}\s*$'

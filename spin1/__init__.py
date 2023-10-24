@@ -5,4 +5,4 @@ from re import escape
 @check50.check()
 def exists():
     """spin1.py exists"""
-    check50.exists("spin1.py")
+    check50.exists("spin.py")

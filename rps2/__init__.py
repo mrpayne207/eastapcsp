@@ -35,3 +35,20 @@ def test_invalid():
     output = check50.run("python3 rps2.py").stdin("f", prompt = True).stdout()
     if not any(answer in output for answer in ["Make sure to enter r for rock, p for paper or s for scissors"]):
       raise check50.Failure("no match found") 
+
+@check50.check(exists)
+def main_function():
+    """main function exists"""
+    check50.include("custom_checks.py")
+    check50.run("python3 custom_checks.py main_function").exit(0)
+
+
+@check50.check(exists)
+def custom_function():
+    """implemented at least 1 top-level function other than main"""
+    check50.include("custom_checks.py")
+    check50.run("python3 custom_checks.py custom_functions").exit(0)
+
+def regex(text):
+    """match case-sensitively, allowing for characters on either side"""
+    return fr'^.*{escape(text)}.*$'

@@ -16,14 +16,14 @@ def test_p1isROCK():
       raise check50.Failure("no match found")
 
 @check50.check(exists)
-def test_p1ispapper():
+def test_p1isPAPER():
     """input of \"p\" for Player 1 matches \"TIE\" for \"Computer = p\", \"COMPUTER WINS\" for \"Computer = s\" or \"PLAYER 1 WINS\" for \"Computer = r\""""
     output = check50.run("python3 rps2.py").stdin("p", prompt = True).stdout()
     if not any(answer in output for answer in ["Computer: p\nTIE", "Computer: s\nCOMPUTER WINS", "Computer: r\nPLAYER 1 WINS"]):
       raise check50.Failure("no match found")  
 
 @check50.check(exists)
-def test_p1isscissor():
+def test_p1isSCISSOR():
     """input of \"s\" for Player 1 matches \"TIE\" for \"Computer = s\", \"COMPUTER WINS\" for \"Computer = r\" or \"PLAYER 1 WINS\" for \"Computer = p\""""
     output = check50.run("python3 rps2.py").stdin("s", prompt = True).stdout()
     if not any(answer in output for answer in ["Computer: s\nTIE", "Computer: r\nCOMPUTER WINS", "Computer: p\nPLAYER 1 WINS"]):

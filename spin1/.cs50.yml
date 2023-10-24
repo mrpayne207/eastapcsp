@@ -2,7 +2,7 @@ submit50:
   files: &submit50_files
     - !exclude "*"
     - !include "*.py"
-    - !require spin1.py
+    - !require spin.py
   style: false
   
 check50:

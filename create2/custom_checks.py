@@ -30,7 +30,7 @@ match sys.argv[1]:
             assert condition_counter >= 1
     
     case "condition":
-        with open("create3.py") as file:
+        with open("create2.py") as file:
             condition_counter = 0
             for line in file.readlines():
                 if "def main" in line.strip():

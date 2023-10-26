@@ -6,3 +6,22 @@ from re import escape
 def exists():
     """create2.py exists"""
     check50.exists("create2.py")
+
+@check50.check(exists)
+def main_function():
+    """main function exists"""
+    check50.include("custom_checks.py")
+    check50.run("python3 custom_checks.py main_function").exit(0)
+
+
+@check50.check(exists)
+def custom_function():
+    """implemented at least 1 top-level function other than main"""
+    check50.include("custom_checks.py")
+    check50.run("python3 custom_checks.py custom_functions").exit(0)
+
+@check50.check(exists)
+def condition():
+    """implemented at least 1 condition"""
+    check50.include("custom_checks.py")
+    check50.run("python3 custom_checks.py condition").exit(0)

@@ -76,7 +76,7 @@ def testF():
     input2 = "40"
     input3 = "50"
     input4 = "60"
-    output = "Grade List: [40, 50, 60]\nMinimum Grade: 40\nMaximum Grade: 60\nAverage = 50.0, Letter Grade = F"
+    output = "Grade List: [40, 50, 60]\nMinimum Grade: 40\nMaximum Grade: 60\nAverage Grade: 50.0, Letter Grade: F"
     check50.run("python3 grade1.py").stdin(input1, prompt=True).stdin(input2, prompt=True).stdin(input3, prompt=True).stdin(input4, prompt=True).stdout(regex(output), output, regex=True).exit()
 
     

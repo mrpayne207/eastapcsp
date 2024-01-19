@@ -39,7 +39,7 @@ def testRetake():
     input4 = "86"
     input5 = "61"
     input6 = "100"
-    output = "Average Grade: 79.6\nYou should retake Test 1, your score was: 73\nYou should retake Test 2, your score was: 78\nYou should retake Test 4, your score was: 613"
+    output = "Average Grade: 79.6\nYou should retake Test 1, your score was: 73\nYou should retake Test 2, your score was: 78\nYou should retake Test 4, your score was: 61"
     check50.run("python3 grade.py").stdin(input1, prompt=True).stdin(input2, prompt=True).stdin(input3, prompt=True).stdin(input4, prompt=True).stdin(input5, prompt=True).stdin(input6, prompt=True).stdout(regex(output), output, regex=True).exit()
 
 def regex(text):

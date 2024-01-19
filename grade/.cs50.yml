@@ -2,7 +2,7 @@ submit50:
   files: &submit50_files
     - !exclude "*"
     - !include "*.py"
-    - !require grade1.py
+    - !require grade.py
   style: false
   
 check50:

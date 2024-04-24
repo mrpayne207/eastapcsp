@@ -12,7 +12,7 @@ def exists():
 def test_1_arg():
     """input of \"python caesar.py\" results in error"""
     output = "Usage: python caesar.py <int>"
-    check50.run("python3 rps1.py").stdout(regex(output), output, regex=True).exit()
+    check50.run("python3 caesar.py").stdout(regex(output), output, regex=True).exit()
 
 
 @check50.check(exists)

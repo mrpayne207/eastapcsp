@@ -25,7 +25,7 @@ def test_nonint_arg():
 def test_intarg():
     """input of \"python caesar.py 5\" runs correctly"""
     input = "Hello, World!"
-    output = "Mjqqt, Btwqi!"
+    output = "cyphertext: Mjqqt, Btwqi!"
     check50.run("python3 caesar.py 5").stdin(input, prompt=True).stdout(regex(output), output, regex=True).exit()
 
 @check50.check(exists)

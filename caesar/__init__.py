@@ -10,20 +10,20 @@ def exists():
 
 @check50.check(exists)
 def test_1_arg():
-    """input of \"python caesar.py\" results in error""""
+    """input of \"python caesar.py\" results in error"""
     output = "Usage: python caesar.py <int>"
     check50.run("python3 rps1.py").stdout(regex(output), output, regex=True).exit()
 
 
 @check50.check(exists)
 def test_nonint_arg():
-    """input of \"python caesar.py a\" results in error""""
+    """input of \"python caesar.py a\" results in error"""
     output = "Usage: python caesar.py <int>"
     check50.run("python3 caesar.py a").stdout(regex(output), output, regex=True).exit()
 
 @check50.check(exists)
 def test_intarg():
-    """input of \"python caesar.py 5\" runs correctly""""
+    """input of \"python caesar.py 5\" runs correctly"""
     input = "Hello, World!"
     output = "Mjqqt, Btwqi!"
     check50.run("python3 caesar.py 5").stdin(input[0], prompt=True).stdout(regex(output), output, regex=True).exit()

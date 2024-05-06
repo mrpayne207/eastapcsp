@@ -36,6 +36,13 @@ def test_key2():
     check50.run("python3 encrypt.py 5182273847").stdin(input, prompt=True).stdout(regex(output), output, regex=True).exit()
 
 @check50.check(exists)
+def test_key3():
+    """input of \"python encrypt.py 975318462\" runs correctly"""
+    input = "Write the REAL code Nathan!"
+    output = "cyphertext: Fynwf bni TNHQ fplk Rccofq!"
+    check50.run("python3 encrypt.py 975318462").stdin(input, prompt=True).stdout(regex(output), output, regex=True).exit()
+
+@check50.check(exists)
 def main_function():
     """main function exists"""
     check50.include("custom_checks.py")

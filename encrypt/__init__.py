@@ -39,7 +39,7 @@ def test_key2():
 def test_key3():
     """input of \"python encrypt.py 975318462\" runs correctly"""
     input = "Write the REAL code Nathan!"
-    output = "cyphertext: Fynwf bniTNHQ fplk Rccofq!"
+    output = "cyphertext: Fynwf blk TNHQ fpli Tccofq!"
     check50.run("python3 encrypt.py 975318462").stdin(input, prompt=True).stdout(regex(output), output, regex=True).exit()
 
 @check50.check(exists)

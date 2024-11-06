@@ -18,7 +18,7 @@ def test_MXN():
 
 @check50.check(exists)
 def test_PLN():
-    """input of 531 USD to PLN at 4.36 rate is 1,332.24"""
+    """input of 531 USD to PLN at 4.36 rate is 2,315.16"""
     input1 = "531"
     input2 = "PLN"
     input3 = "4.36"

@@ -32,7 +32,7 @@ def test_tie():
     
 @check50.check(exists)
 def test_invalid():
-    """input of \"f\" and \"b\" results in \"Make sure to enter r for rock, p for paper or s for scissors\""""
+    """input of \"f\" and \"b\" results in \"Make sure to enter r for rock, p for paper and s for scissors\""""
     input = ["f", "b"]
     output = "Make sure to enter r for rock, p for paper or s for scissors"
     check50.run("python3 rps1.py").stdin(input[0], prompt=True).stdin(input[1], prompt=True).stdout(regex(output), output, regex=True).exit()

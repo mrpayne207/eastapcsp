@@ -53,7 +53,7 @@ def test_terminate():
     """coke terminates at 50 cents"""
     input = "25"
     output = "You paid with the following coins:\nquarter, quarter,\nChange owed back to you: 0 cents"
-    check50.run("python3 coke.py").stdin(input, prompt=True).stdin(input, prompt=True).stdin(input, prompt=True).stdin(input, prompt=True).stdin(input, prompt=True).stdout(regex(output), output, regex=True).exit()
+    check50.run("python3 coke.py").stdin(input, prompt=True).stdin(input, prompt=True).stdout(regex(output), output, regex=True).exit()
 
 
 @check50.check(exists)

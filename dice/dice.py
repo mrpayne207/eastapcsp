@@ -3,7 +3,9 @@
 
 #import random library and seed randomizer
 import random
-random.seed()
+#for the purposes of running our autochecker, use random.seed(1). 
+#If you want it to truely be random, you would leave it blank random.seed()
+random.seed(1)
 
 #define main procedure
 def main():

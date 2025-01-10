@@ -8,18 +8,26 @@ def exists():
     check50.exists("rps3.py")
 
 @check50.check(exists)
-def test_invalid_round():
-    """input of \"a\" for rounds is rejected"""
-    output = check50.run("python3 rps3.py").stdin("R", prompt = True).stdout()
-    if not any(answer in output for answer in ["Computer: r\nTIE", "Computer: p\nCOMPUTER WINS", "Computer: s\nPLAYER 1 WINS"]):
-      raise check50.Failure("no match found")
+def test_invalid_letter():
+    """rejects invalid letter a"""
+    input = "a"
+    output = "Make sure it is a positive odd integer"
+    check50.run("python3 rps3.py").stdin(input, prompt=True).stdout(regex(output), output, regex=True).kill()
+
+@check50.check(exists)
+def test_invalid_number():
+    """rejects invalid number 2"""
+    input = "2"
+    output = "Make sure it is a positive odd integer"
+    check50.run("python3 rps3.py").stdin(input, prompt=True).stdout(regex(output), output, regex=True).kill()
 
 @check50.check(exists)
 def test_p1isROCK():
-    """input of \"R\" for Player 1 matches \"TIE\" for \"Computer = r\", \"COMPUTER WINS\" for \"Computer = p\" or \"PLAYER 1 WINS\" for \"Computer = s\""""
-    output = check50.run("python3 rps3.py").stdin("R", prompt = True).stdout()
-    if not any(answer in output for answer in ["Computer: r\nTIE", "Computer: p\nCOMPUTER WINS", "Computer: s\nPLAYER 1 WINS"]):
-      raise check50.Failure("no match found")
+    """input of \"R\" for Player 1 is accepted"""
+    input1 = "1"
+    input2 = "R"
+    output = "Tie\n\---\n\Round 1\nPlayer 1 Score: 0, Computer Score: 0"
+    check50.run("python3 rps3.py").stdin(input1, prompt=True).stdin(input2, prompt=True).stdout(regex(outout), output, regex=True).kill()
 
 @check50.check(exists)
 def test_p1isPAPER():

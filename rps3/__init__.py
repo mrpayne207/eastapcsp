@@ -39,17 +39,20 @@ def test_p1isPAPER():
 
 @check50.check(exists)
 def test_p1isSCISSOR():
-    """input of \"s\" for Player 1 matches \"TIE\" for \"Computer = s\", \"COMPUTER WINS\" for \"Computer = r\" or \"PLAYER 1 WINS\" for \"Computer = p\""""
-    output = check50.run("python3 rps2.py").stdin("s", prompt = True).stdout()
-    if not any(answer in output for answer in ["Computer: s\nTIE", "Computer: r\nCOMPUTER WINS", "Computer: p\nPLAYER 1 WINS"]):
-      raise check50.Failure("no match found")  
+    def test_p1isPAPER():
+    """input of \"p\" for Player 1 is accepted"""
+    input1 = "1"
+    input2 = "s"
+    output = "Computer: r\nPlayer 1 wins the round\n---\nFinal Score: Player 1: 1, Computer: 0\nPlayer 1 Wins the game\n---\nDetailed Game Results:\nRound 1: Player 1 wins the round"
+    check50.run("python3 rps3.py").stdin(input1, prompt=True).stdin(input2, prompt=True).stdout(regex(output), output, regex=True).kill() 
 
 @check50.check(exists)
 def test_invalid():
     """input of \"f\" for Player 1 results in \"Make sure to enter r for rock, p for paper and s for scissors\""""
-    output = check50.run("python3 rps2.py").stdin("f", prompt = True).stdout()
-    if not any(answer in output for answer in ["Make sure to enter r for rock, p for paper and s for scissors"]):
-      raise check50.Failure("no match found") 
+    input1 = "1"
+    input2 = "f"
+    output = "Make sure to enter r for rock, p for paper and s for scissors\nPlayer 1: "
+    check50.run("python3 rps3.py").stdin(input1, prompt=True).stdin(input2, prompt=True).stdout(regex(output), output, regex=True).kill()  
 
 @check50.check(exists)
 def main_function():

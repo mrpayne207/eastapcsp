@@ -39,8 +39,7 @@ def test_p1isPAPER():
 
 @check50.check(exists)
 def test_p1isSCISSOR():
-    def test_p1isPAPER():
-    """input of \"p\" for Player 1 is accepted"""
+    """input of \"s\" for Player 1 is accepted"""
     input1 = "1"
     input2 = "s"
     output = "Computer: r\nPlayer 1 wins the round\n---\nFinal Score: Player 1: 1, Computer: 0\nPlayer 1 Wins the game\n---\nDetailed Game Results:\nRound 1: Player 1 wins the round"

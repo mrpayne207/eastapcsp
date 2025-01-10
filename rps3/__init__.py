@@ -26,7 +26,7 @@ def test_p1isROCK():
     """input of \"R\" for Player 1 is accepted"""
     input1 = "1"
     input2 = "R"
-    output = "Tie\n\---\n\Round 1\nPlayer 1 Score: 0, Computer Score: 0"
+    output = "Tie\n---\nRound 1\nPlayer 1 Score: 0, Computer Score: 0\nPlayer 1: "
     check50.run("python3 rps3.py").stdin(input1, prompt=True).stdin(input2, prompt=True).stdout(regex(output), output, regex=True).kill()
 
 @check50.check(exists)

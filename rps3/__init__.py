@@ -31,10 +31,11 @@ def test_p1isROCK():
 
 @check50.check(exists)
 def test_p1isPAPER():
-    """input of \"p\" for Player 1 matches \"TIE\" for \"Computer = p\", \"COMPUTER WINS\" for \"Computer = s\" or \"PLAYER 1 WINS\" for \"Computer = r\""""
-    output = check50.run("python3 rps2.py").stdin("p", prompt = True).stdout()
-    if not any(answer in output for answer in ["Computer: p\nTIE", "Computer: s\nCOMPUTER WINS", "Computer: r\nPLAYER 1 WINS"]):
-      raise check50.Failure("no match found")  
+    """input of \"p\" for Player 1 is accepted"""
+    input1 = "1"
+    input2 = "p"
+    output = "Computer: r\nPlayer1 wins the round\n---\Final Score: Player 1: 1, Computer: 0\nPlayer1 Wins the game\n---\nDetailed Game Results:\Round 1: Player 1 wins the round"
+    check50.run("python3 rps3.py").stdin(input1, prompt=True).stdin(input2, prompt=True).stdout(regex(output), output, regex=True).kill()
 
 @check50.check(exists)
 def test_p1isSCISSOR():

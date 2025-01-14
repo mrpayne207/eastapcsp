@@ -10,7 +10,7 @@ def main():
     # shuffle the deck of cards 5 times
     # TODO
 
-    #deel the deck of cards into 2 equal player sets
+    #deal the deck of cards into 2 equal player sets
     deck1, deck2 = deal(card_deck)
 
     #set up a blank list for a "pot" in case of a war
@@ -81,7 +81,7 @@ def play_round(deck1, deck2, war_pot):
         #increment war_count
         war_count += 1
         # only play war if each deck has enough cards
-        if (len(deck1) > 2 and len(deck2) > 2):
+        if (len(deck1) > 3 and len(deck2) > 3):
             # add current cards to the war pot
             war_pot.append(card1)
             war_pot.append(card2)

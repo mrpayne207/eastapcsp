@@ -4,7 +4,7 @@ from re import escape
 
 @check50.check()
 def exists():
-    """create3.py exists"""
+    """war.py exists"""
     check50.exists("war.py")
 
 @check50.check(exists)

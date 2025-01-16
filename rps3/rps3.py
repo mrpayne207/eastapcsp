@@ -1,3 +1,6 @@
+# student name
+# rps3.py
+
 from random import choice, seed
 seed(1)
 
@@ -14,8 +17,8 @@ def main():
     # start at round 0
     round = 0
 
-    # repeatedly play the game while no score is more than 1/2 the rounds
-    while (p1score < n/2 and p2score < n/2):
+    # while player 1 and player 2 scores are less than 1/2 the number of rounds of the game
+    # TODO
 
         # print the round number
         print(f"---\nRound {round + 1}")
@@ -33,10 +36,17 @@ def main():
         # determine winner of round
         winner = who_won(player1, player2)
 
-        # if winner is 1, increment p1 score, add "Player 1 wins the round" to the rounds list and increment the round
-        # if winner is 1, increment p2 score, add "Computer wins the round" to the rounds list and increment the round
-        # else pass
-        # FINISH
+        # if winner is 1,
+        #   increment p1 score,
+        #   add "Player 1 wins the round" to the rounds list
+        #   increment the round
+        # if winner is 2,
+        #   increment p2 score,
+        #   add "Computer wins the round" to the rounds list
+        #   increment the round
+        # else
+        #   pass
+        # TODO
 
     # print the final score
     print(f"---\nFinal Score: Player 1: {p1score}, Computer: {p2score}")
@@ -52,25 +62,25 @@ def main():
 
 # validate getting an odd positive integer
 def get_odd(prompt, error_message):
-    # FINISH
+    # TODO
 
 # validate getting only r, p or s input
 def get_rps(prompt, error_message):
-    # FINISH
+    # TODO
 
 # print "Detailed Game Results:"
 # then traverse list, print values of list, preceded by Round #, one value on each line
 def print_results(list):
-    # FINISH
+    # TODO
 
 # generate a random computer play of r, p or s
 def computer_play():
-    # FINISH
+    # TODO
 
 # determine who won the round based on rules of rock-paper-scissiors
 # if tie, return 0, if p1 wins, return 1, if computer wins, return 2
 def who_won(p1, p2):
-    # FINISH
+    # TODO
 
 # call the main function
 main()

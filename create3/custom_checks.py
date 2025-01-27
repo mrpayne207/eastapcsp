@@ -36,7 +36,9 @@ match sys.argv[1]:
         with open("create3.py") as file:
             loop_counter = 0
             for line in file.readlines():
-                if ("for" or "while") in line.strip():
+                if "for" in line.strip():
+                    loop_counter += 1
+                if "while" in line.strip():
                     loop_counter += 1
            
             # Ensure there is at least 1 loop in the program
